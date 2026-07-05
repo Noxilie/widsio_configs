@@ -1700,6 +1700,9 @@ SandboxVars = {
         BloodAgingMode = true,
         -- Min: 5 Max: 21 Default: 14
         BloodAgingRadius = 14,
+        EnableWaterPurification = true,
+        -- Min: 5 Max: 21 Default: 5
+        WaterPurificationRadius = 5,
         EnableLightPaints = true,
         AllowWindowGlass = true,
         AllowAutopsyOnGround = true,
@@ -1942,6 +1945,10 @@ SandboxVars = {
         BoredomReliefPreset = 4,
         UnhappinessReliefPreset = 4,
     },
+    JordanalSpawns = {
+        -- Min: 0.00 Max: 100.00 Default: 0.04
+        DPM95_Camo_UnitChance = 0.04,
+    },
     ReactiveSE = {
         -- Min: 1 Max: 720 Default: 48
         MinEventCooldown = 48,
@@ -2101,7 +2108,7 @@ SandboxVars = {
         ConnectPanelMin = 30,
         -- Min: 0 Max: 50 Default: 0
         BackupConnectRange = 0,
-        HardenedPanelRecipe = false,
+        HardenedPanelRecipe = true,
     },
     ChoppedVehicleSalvage = {
         -- Min: 0.50 Max: 10.00 Default: 2.00

@@ -158,3 +158,4 @@
 3744846617;SimpleBows
 3746263842;Wild Turkeys
 3756814990;ServerAutoUpdate_B42
+3729571199;Condition Protection
