@@ -14,7 +14,6 @@
 2714198296 NoLighterNeeded
 2753086629 survivingthroughseasons
 2776874515 M13ReadingTweaks
-2788256295 2788256295/ammomaker
 2788256295 ammomaker
 2799152995 78amgeneralM35A2
 2799152995 78amgeneralM35A2extra
