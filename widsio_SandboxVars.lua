@@ -2153,4 +2153,10 @@ SandboxVars = {
         -- Min: 5 Max: 300 Default: 15
         QuitDelaySeconds = 15,
     },
+    CP = {
+        -- Min: 0.00 Max: 100.00 Default: 75.00
+        SharpnessProtectionMultiplier = 75.0,
+        -- Min: 0.50 Max: 2.00 Default: 1.00
+        SharpnessDullingMultiplier = 1.0,
+    },
 }
