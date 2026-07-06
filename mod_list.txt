@@ -1,7 +1,7 @@
-3543229299;PROJECTRVInterior42
-3618427553;RVInteriorExpansion
-3622163276;RVInteriorExpansionPart2
-3614959302;RVmilitaryaddon
+3543229299;PROJECTRVInterior42;map_distanciado
+3618427553;RVInteriorExpansion;rvupdate
+3622163276;RVInteriorExpansionPart2;rv2
+3614959302;RVmilitaryaddon;map_rv
 3171167894;damnlib
 3508537032;NeatUI_Framework
 2705406713;Military_Tool_Kit
@@ -14,17 +14,17 @@
 2837923608;PertsPartyTiles
 2852704777;simonMDsTiles
 3628736763;UnofficialMappersCommunityTilePack
-3717208771;Atlas Underground
-3728357493;HavenFall
-3666566299;BlackstoneMapMod
-3542039112;Dustwell
-3486814612;Fort Waterfront B42
-3537326669;Fort JadeLake
-3602388131;Greenleaf B42 version
-3450258411;shelter-EC42
-3691773420;WILDSTEEL
-3704429976;Towhead-Island-FOB
-3701164856;Macon
+3717208771;Atlas Underground;Atlas Underground Complex
+3728357493;HavenFall;HavenFall
+3666566299;BlackstoneMapMod;Blackstone
+3542039112;Dustwell;Dustwell
+3486814612;Fort Waterfront B42;Fort Waterfront B42
+3537326669;Fort JadeLake;Fort JadeLake
+3602388131;Greenleaf B42 version;Greenleaf
+3450258411;shelter-EC42;SHELTER Echo Creek B42
+3691773420;WILDSTEEL;WILDSTEEL
+3704429976;Towhead-Island-FOB;Towhead-Island-FOB
+3701164856;Macon;Macon
 2409333430;91range
 2478247379;67commando
 2566953935;86oshkoshP19A
