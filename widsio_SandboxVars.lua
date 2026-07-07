@@ -765,6 +765,9 @@ SandboxVars = {
     NavigatorForceOpenMap = false,
     NavigatorEnableResolverDebug = false,
     NavigatorEnableRouteDataRegeneration = false,
+    VRO_EnableEngineRebuild = false,
+    VRO_UseVanillaFixingRecipes = false,
+    VRO_EnableFullVehicleSalvaging = true,
     Basement = {
         -- How frequently basements spawn at random locations. Default = Sometimes
         -- 1 = Never
@@ -1040,16 +1043,6 @@ SandboxVars = {
         Custom3x6Caravan = "",
         Custom3x7Empty = "",
         Custom4x12colossal = "",
-    },
-    sts = {
-        -- Min: 0.00 Max: 15.00 Default: 10.00
-        MaxDaysInMonthSpring = 15.0,
-        -- Min: 0.00 Max: 15.00 Default: 10.00
-        MaxDaysInMonthSummer = 15.0,
-        -- Min: 0.00 Max: 15.00 Default: 10.00
-        MaxDaysInMonthFall = 15.0,
-        -- Min: 0.00 Max: 15.00 Default: 10.00
-        MaxDaysInMonthWinter = 15.0,
     },
     DAMN = {
         AllowOinkerSpawns = true,
@@ -1818,18 +1811,6 @@ SandboxVars = {
         -- Min: 50 Max: 1000 Default: 250
         CraftingTime = 250,
     },
-    ChoppedVehicleSalvage = {
-        -- Min: 0.50 Max: 10.00 Default: 2.00
-        SalvageDurationMultiplier = 2.0,
-        -- Min: -1 Max: 20 Default: 0
-        MinPartsDropped = 0,
-        -- Min: -1 Max: 20 Default: -1
-        MaxPartsDropped = -1,
-        -- Min: 0 Max: 10 Default: 3
-        MinWeldingLevel = 3,
-        -- Min: 0 Max: 10 Default: 0
-        MinMechanicsLevel = 0,
-    },
     STA_EngineRebuild = {
         -- Min: 0 Max: 6 Default: 2
         MinMechanicsLevel = 2,
@@ -2158,5 +2139,19 @@ SandboxVars = {
         SharpnessProtectionMultiplier = 75.0,
         -- Min: 0.50 Max: 2.00 Default: 1.00
         SharpnessDullingMultiplier = 1.0,
+    },
+    CraftablePaints = {
+        RequireGuide = true,
+        -- Min: 0.00 Max: 10.00 Default: 0.20
+        GuideSpawnWeight = 0.2,
+        EnableVinegarCrafting = true,
+    },
+    VehiclePaintSystem = {
+        Enabled = true,
+        -- Min: 0 Max: 10 Default: 3
+        RequiredMechanics = 2,
+        -- Min: 0.01 Max: 1.00 Default: 0.25
+        PaintUseDelta = 0.25,
+        AllowedColors = "\"white",
     },
 }
