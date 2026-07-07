@@ -5,7 +5,6 @@
 3171167894;damnlib
 3508537032;NeatUI_Framework
 2705406713;Military_Tool_Kit
-2753086629;survivingthroughseasons
 3412105017;Project_Seasons_B42
 2901962885;REORDER_CONTAINERS
 2903771337;REORDER_THE_HOTBAR
@@ -124,7 +123,6 @@
 3618557184;HereGoesTheSun
 3629835761;Ladders42131
 3631390083;APO_Engineer
-3727602756;ChoppedVehicleSalvage
 3628452306;STA_EngineRebuild
 3741877969;FuelTankerMod
 3741902515;JumperCables
@@ -159,3 +157,9 @@
 3622328997;AdaptiveTraits
 3756814990;ServerAutoUpdate_B42
 3729571199;Condition Protection
+3723546162;burn_the_dung
+3737854158;CraftablePaints
+3737854158;CraftablePaintsWallpapers
+3742399637;vehiclepaintsystem
+2757712197;VehicleRepairOverhaul
+2757712197;VehicleSalvageOverhaulB42
