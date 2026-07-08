@@ -127,7 +127,6 @@
 3741877969;FuelTankerMod
 3741902515;JumperCables
 3662220257;PopTheHood
-3649092715;zReArmorPackBYKB42
 3650168851;B42Horticulture
 3650822948;twistonfireisboring
 3654107996;[J&G] British DPM Uniform
