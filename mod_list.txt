@@ -155,10 +155,11 @@
 3746263842;Wild Turkeys
 3622328997;AdaptiveTraits
 3756814990;ServerAutoUpdate_B42
-3729571199;Condition Protection
+3723127305;Nihonto
 3723546162;burn_the_dung
 3737854158;CraftablePaints
 3737854158;CraftablePaintsWallpapers
 3742399637;vehiclepaintsystem
 2757712197;VehicleRepairOverhaul
 2757712197;VehicleSalvageOverhaulB42
+3745718141;Explosives
