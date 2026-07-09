@@ -1729,9 +1729,9 @@ SandboxVars = {
         -- Min: 0 Max: 100 Default: 10
         BathPercent = 10,
         -- Min: 0 Max: 100 Default: 90
-        MinPercent = 90,
+        MinPercent = 0,
         -- Min: 0 Max: 100 Default: 100
-        MaxPercent = 100,
+        MaxPercent = 10,
         -- Min: -1 Max: 2147483647 Default: -1
         TaintedWater = -1,
         PlumbingTaintedWater = false,
@@ -1833,14 +1833,6 @@ SandboxVars = {
         VehicleTransfersRequireHose = true,
         EnableRightClickMenu = true,
         EnableRadialMenu = true,
-    },
-    zRePA = {
-        -- Min: 0 Max: 30000 Default: 20
-        ChanceMillitary = 20,
-        -- Min: 0 Max: 30000 Default: 10
-        ChanceMilEXO = 10,
-        -- Min: 0 Max: 30000 Default: 10
-        ChanceTractor = 10,
     },
     B42Horticulture = {
         LearnedRecipe = true,
@@ -2134,11 +2126,36 @@ SandboxVars = {
         -- Min: 5 Max: 300 Default: 15
         QuitDelaySeconds = 15,
     },
-    CP = {
+    Nihonto = {
+        replaceVanillaKatana = true,
+        -- Min: 0.10 Max: 100.00 Default: 10.00
+        WeightMultiplier = 10.0,
+        SharpnessMechanic = true,
+        -- Min: 10.00 Max: 100.00 Default: 36.00
+        Katana_ConditionLowerChanceOneIn = 36.0,
+        -- Min: 10.00 Max: 100.00 Default: 18.00
+        Katana_ConditionMax = 18.0,
+        -- Min: 10.00 Max: 100.00 Default: 32.00
+        Wakizashi_ConditionLowerChanceOneIn = 32.0,
+        -- Min: 5.00 Max: 30.00 Default: 16.00
+        Wakizashi_ConditionMax = 16.0,
+        -- Min: 10.00 Max: 50.00 Default: 36.00
+        Nagamaki_ConditionLowerChanceOneIn = 36.0,
+        -- Min: 10.00 Max: 50.00 Default: 18.00
+        Nagamaki_ConditionMax = 18.0,
+        -- Min: 10.00 Max: 100.00 Default: 40.00
+        Odachi_ConditionLowerChanceOneIn = 40.0,
+        -- Min: 10.00 Max: 100.00 Default: 20.00
+        Odachi_ConditionMax = 20.0,
+        -- Min: 10.00 Max: 50.00 Default: 28.00
+        Tanto_ConditionLowerChanceOneIn = 28.0,
+        -- Min: 10.00 Max: 50.00 Default: 14.00
+        Tanto_ConditionMax = 14.0,
         -- Min: 0.00 Max: 100.00 Default: 75.00
         SharpnessProtectionMultiplier = 75.0,
         -- Min: 0.50 Max: 2.00 Default: 1.00
         SharpnessDullingMultiplier = 1.0,
+        MoreLoot = false,
     },
     CraftablePaints = {
         RequireGuide = true,
@@ -2153,5 +2170,13 @@ SandboxVars = {
         -- Min: 0.01 Max: 1.00 Default: 0.25
         PaintUseDelta = 0.25,
         AllowedColors = "\"white",
+    },
+    Explosives = {
+        MinesEnabled = false,
+        -- Min: 0.10 Max: 5.00 Default: 1.00
+        LootMultiplier = 0.3,
+        FireDamageEnabled = true,
+        -- Min: 0.50 Max: 5.00 Default: 1.00
+        FireDamageMultiplier = 1.0,
     },
 }
