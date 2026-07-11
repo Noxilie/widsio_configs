@@ -2016,6 +2016,24 @@ SandboxVars = {
         InsulationStrength = 1.0,
         ColdFeelingEnabled = true,
     },
+    PZCrossbows = {
+        -- Min: 0.00 Max: 1000.00 Default: 1.00
+        CrudeCrossbowSpawnMult = 0.6,
+        -- Min: 0.00 Max: 1000.00 Default: 1.00
+        ImprovedCrossbowSpawnMult = 0.6,
+        -- Min: 0.00 Max: 1000.00 Default: 1.00
+        CompoundCrossbowSpawnMult = 0.6,
+        -- Min: 0.00 Max: 1000.00 Default: 1.00
+        HandCrossbowSpawnMult = 0.6,
+        -- Min: 0 Max: 100 Default: 40
+        BoltWBaseBreakChance = 40,
+        -- Min: 0 Max: 100 Default: 3
+        BoltWBreakChanceScaling = 3,
+        -- Min: 0 Max: 100 Default: 50
+        BoltSWBaseBreakChance = 50,
+        -- Min: 0 Max: 100 Default: 3
+        BoltSWBreakChanceScaling = 3,
+    },
     AdaptiveTraits = {
         AdrenalineJunkie_CanGain = true,
         -- Min: 1 Max: 10000 Default: 50

@@ -151,7 +151,7 @@
 3734639991;SeedSeasonIndicator
 3738024019;WaterPipes_42_19_Compat
 3743352602;WaterPipesBasementWater
-3744846617;SimpleBows
+3758880254;PZCrossbows
 3746263842;Wild Turkeys
 3622328997;AdaptiveTraits
 3756814990;ServerAutoUpdate_B42
