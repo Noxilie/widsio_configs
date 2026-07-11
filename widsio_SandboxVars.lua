@@ -146,7 +146,7 @@ SandboxVars = {
     -- Fishing Rods, Tents, camping gear etc. Min: 0.00 Max: 4.00 Default: 0.60
     SurvivalGearsLootNew = 0.3,
     -- Canned and dried food, beverages. Min: 0.00 Max: 4.00 Default: 0.60
-    CannedFoodLootNew = 0.3,
+    CannedFoodLootNew = 0.4,
     -- Weapons that are not tools in other categories. Min: 0.00 Max: 4.00 Default: 0.60
     WeaponLootNew = 0.4,
     -- Also includes weapon attachments. Min: 0.00 Max: 4.00 Default: 1.20
@@ -154,11 +154,11 @@ SandboxVars = {
     -- Loose ammo, boxes and magazines. Min: 0.00 Max: 4.00 Default: 0.60
     AmmoLootNew = 0.3,
     -- Vehicle parts and the tools needed to install them. Min: 0.00 Max: 4.00 Default: 0.60
-    MechanicsLootNew = 0.3,
+    MechanicsLootNew = 0.4,
     -- Everything else. Also affects foraging for all items in Town/Road zones. Min: 0.00 Max: 4.00 Default: 0.80
     OtherLootNew = 0.6,
     -- All wearable items that are not containers. Min: 0.00 Max: 4.00 Default: 0.60
-    ClothingLootNew = 0.3,
+    ClothingLootNew = 0.4,
     -- Backpacks and other wearable/equippable containers, eg. cases. Min: 0.00 Max: 4.00 Default: 0.60
     ContainerLootNew = 0.3,
     -- Keys for buildings/cars, key rings, and locks. Min: 0.00 Max: 4.00 Default: 0.40
@@ -166,15 +166,15 @@ SandboxVars = {
     -- VHS tapes and CDs. Min: 0.00 Max: 4.00 Default: 0.60
     MediaLootNew = 0.3,
     -- Spiffo items, plushies, and other collectible keepsake items eg. Photos. Min: 0.00 Max: 4.00 Default: 0.60
-    MementoLootNew = 0.2,
+    MementoLootNew = 0.4,
     -- Items that are used in cooking, including those (eg. knives) which can be weapons. Does not include food. Includes both usable and unusable items. Min: 0.00 Max: 4.00 Default: 0.60
-    CookwareLootNew = 0.2,
+    CookwareLootNew = 0.4,
     -- Items and weapons that are used as ingredients for crafting or building. This is a general category that does not include items belonging to other categories such as Cookware or Medical. Does not include Tools. Min: 0.00 Max: 4.00 Default: 0.60
-    MaterialLootNew = 0.2,
+    MaterialLootNew = 0.4,
     -- Items and weapons which are used in both animal and plant agriculture, such as Seeds, Trowels, or Shovels. Min: 0.00 Max: 4.00 Default: 0.60
-    FarmingLootNew = 0.2,
+    FarmingLootNew = 0.4,
     -- Items and weapons which are Tools but don't fit in other categories such as Mechanics or Farming. Min: 0.00 Max: 4.00 Default: 0.60
-    ToolLootNew = 0.2,
+    ToolLootNew = 0.4,
     -- <BHC> [!] It is recommended that you DO NOT change this. [!] <RGB:1,1,1>   Can be used to adjust the number of rolls made on loot tables when spawning loot. Will not reduce the number of rolls below 1. Can negatively affect performance if set to high values. It is highly recommended that this not be changed. Min: 0.10 Max: 100.00 Default: 1.00
     RollsMultiplier = 1.0,
     -- A comma-separated list of item types that won't spawn as ordinary loot.
@@ -718,11 +718,11 @@ SandboxVars = {
     -- The abundance of harvested crops. Min: 0.10 Max: 10.00 Default: 1.00
     FarmingAmountNew = 1.0,
     -- The chance that any building will already be looted when found. Check the "Advanced" box below to use a custom number. Min: 0 Max: 200 Default: 25
-    MaximumLooted = 5,
+    MaximumLooted = 3,
     -- How long it takes for Maximum Looted Building Chance to be reached. Min: 0 Max: 3650 Default: 90
-    DaysUntilMaximumLooted = 10,
+    DaysUntilMaximumLooted = 365,
     -- The chance that any rural building will already be looted when found. Check the "Advanced" box below to use a custom number. Min: 0.00 Max: 2.00 Default: 0.50
-    RuralLooted = 0.5,
+    RuralLooted = 0.2,
     -- The maximum loot that won't spawn when Days Until Maximum Diminished Loot is reached. Check the "Advanced" box below to use an exact percentage. Min: 0 Max: 100 Default: 20
     MaximumDiminishedLoot = 20,
     -- How long it takes for Maximum Diminished Loot Percentage to be reached. Min: 0 Max: 3650 Default: 3650
@@ -2178,5 +2178,30 @@ SandboxVars = {
         FireDamageEnabled = true,
         -- Min: 0.50 Max: 5.00 Default: 1.00
         FireDamageMultiplier = 1.0,
+    },
+    PIW = {
+        enableinfection = true,
+        -- Min: 1 Max: 1000 Default: 10
+        chanceofinfection = 10,
+        -- Min: 0.01 Max: 8.00 Default: 0.75
+        infectionstrength = 0.75,
+        -- Min: 1 Max: 1000000 Default: 240
+        safetime = 240,
+        -- Min: 0.00 Max: 1000.00 Default: 0.00
+        infectiondamage = 0.0,
+        unsafedirtybandages = false,
+        -- Min: 0.00 Max: 1000.00 Default: 1.50
+        dirtybandagesdamage = 1.5,
+        reducedhealingwhilewounded = false,
+        -- Min: 0.00 Max: 1.00 Default: 0.50
+        reducedhealingwhilewoundedammount = 0.5,
+        sicknessenabled = true,
+        sicknessdificulty = 2,
+        -- Min: 1 Max: 1000000 Default: 300
+        sicknesssafetime = 300,
+    },
+    StartingInjuriesMod = {
+        EnableBlackoutExplosions = false,
+        EnableBandageAssistance = false,
     },
 }

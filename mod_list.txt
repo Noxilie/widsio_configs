@@ -163,3 +163,6 @@
 2757712197;VehicleRepairOverhaul
 2757712197;VehicleSalvageOverhaulB42
 3745718141;Explosives
+3626823538;OCsPacking
+3410729454;Proper_Infected_Wounds_b42
+3634630898;OCsChallengeTraits
