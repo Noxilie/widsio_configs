@@ -1044,6 +1044,28 @@ SandboxVars = {
         Custom3x7Empty = "",
         Custom4x12colossal = "",
     },
+    Tikitown = {
+        CollectionPlush = true,
+        CollectionBaseball = true,
+        -- Min: 0.00 Max: 30.00 Default: 1.00
+        CollectionBaseballCommon = 1.0,
+        -- Min: 0.00 Max: 30.00 Default: 1.00
+        CollectionBaseballRare = 1.0,
+        -- Min: 0.00 Max: 0.40 Default: 0.08
+        CollectionBaseballZombieCommon = 0.075,
+        -- Min: 0.00 Max: 0.40 Default: 0.03
+        CollectionBaseballZombieRare = 0.025,
+        HistoricalOutfits = true,
+        MedicalStims = true,
+        LaserTagItems = true,
+    },
+    TikitownPower = {
+        -- Min: -1.00 Max: 10.00 Default: 2.00
+        DailyDegradeChance = 2.0,
+        -- Min: 0.00 Max: 5.00 Default: 1.10
+        RunningWearMultiplier = 1.1,
+        PartsCanBeDestroyed = true,
+    },
     DAMN = {
         AllowOinkerSpawns = true,
         AllowBushmasterSpawns = true,
