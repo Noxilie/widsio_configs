@@ -1076,30 +1076,6 @@ SandboxVars = {
         AllowWreckyMcChevySpawns = true,
         AllowManlyMANSpawns = true,
     },
-    GamestaVehicleZones = {
-        -- Min: -1 Max: 100 Default: -1
-        spawnRate = -1,
-        -- Min: -1 Max: 100 Default: -1
-        spawnRateModifiedTrafficJams = -1,
-        trafficjamsLV = true,
-        trafficjamsExtra = true,
-        vehicleCorpseDistribution = 3,
-        climbVehicles = false,
-        noGoodCars = false,
-        interactBombVehicle = true,
-        autoVehicleFuelPumps = true,
-        randomAngle = true,
-        weatherEffects = true,
-        earlyExitVehicle = true,
-        -- Min: 0.00 Max: 3.00 Default: 1.00
-        earlyExitVehicleDamage = 1.0,
-        -- Min: -1 Max: 100 Default: -1
-        spawnRateBurnt = -1,
-        -- Min: -0.10 Max: 1.30 Default: -0.10
-        baseVehicleQuality = -0.1,
-        -- Min: -1 Max: 100 Default: -1
-        chanceToPartDamage = -1,
-    },
     Text = {
         DividerMusicNew = true,
         DividerDancingNew = true,
@@ -1116,7 +1092,7 @@ SandboxVars = {
         -- Min: 1 Max: 100 Default: 1
         MaxInProgress = 1,
         -- Min: 1 Max: 100 Default: 3
-        MaxTotal = 3,
+        MaxTotal = 19,
         ResetException = false,
         HideTips = false,
     },
@@ -2040,6 +2016,8 @@ SandboxVars = {
     },
     PZCrossbows = {
         -- Min: 0.00 Max: 1000.00 Default: 1.00
+        LootSpawnMult = 1.0,
+        -- Min: 0.00 Max: 1000.00 Default: 1.00
         CrudeCrossbowSpawnMult = 0.6,
         -- Min: 0.00 Max: 1000.00 Default: 1.00
         ImprovedCrossbowSpawnMult = 0.6,
@@ -2160,7 +2138,7 @@ SandboxVars = {
     ServerUpdate = {
         EnableMod = true,
         -- Min: 1 Max: 1440 Default: 15
-        WorkshopPollingIntervalMinutes = 60,
+        WorkshopPollingIntervalMinutes = 30,
         -- Min: 0 Max: 1440 Default: 15
         RestartDelayMinutes = 5,
         -- Min: 5 Max: 300 Default: 15
