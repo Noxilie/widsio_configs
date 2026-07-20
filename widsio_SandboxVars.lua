@@ -838,9 +838,9 @@ SandboxVars = {
         -- 2 = Navigate
         -- 3 = Basic Navigation
         -- 4 = Random
-        Cognition = 2,
+        Cognition = 4,
         -- Min: 0 Max: 100 Default: 0
-        DoorOpeningPercentage = 0,
+        DoorOpeningPercentage = 5,
         -- How often zombies can crawl under parked vehicles. Default = Often
         -- 1 = Crawlers Only
         -- 2 = Extremely Rare
@@ -1075,6 +1075,30 @@ SandboxVars = {
         AllowMcBoxySpawns = true,
         AllowWreckyMcChevySpawns = true,
         AllowManlyMANSpawns = true,
+    },
+    GamestaVehicleZones = {
+        -- Min: -1 Max: 100 Default: -1
+        spawnRate = -1,
+        -- Min: -1 Max: 100 Default: -1
+        spawnRateModifiedTrafficJams = -1,
+        trafficjamsLV = true,
+        trafficjamsExtra = true,
+        vehicleCorpseDistribution = 3,
+        climbVehicles = false,
+        noGoodCars = false,
+        interactBombVehicle = false,
+        autoVehicleFuelPumps = true,
+        randomAngle = true,
+        weatherEffects = true,
+        earlyExitVehicle = true,
+        -- Min: 0.00 Max: 3.00 Default: 1.00
+        earlyExitVehicleDamage = 1.0,
+        -- Min: -1 Max: 100 Default: -1
+        spawnRateBurnt = -1,
+        -- Min: -0.10 Max: 1.30 Default: -0.10
+        baseVehicleQuality = -0.1,
+        -- Min: -1 Max: 100 Default: -1
+        chanceToPartDamage = -1,
     },
     Text = {
         DividerMusicNew = true,
