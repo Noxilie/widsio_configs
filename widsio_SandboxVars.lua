@@ -7,7 +7,7 @@ SandboxVars = {
     -- 4 = Normal
     -- 5 = Low
     -- 6 = None
-    Zombies = 4,
+    Zombies = 3,
     -- How zombies are distributed across the map. Default = Urban Focused
     -- 1 = Urban Focused
     -- 2 = Uniform
@@ -50,7 +50,7 @@ SandboxVars = {
     -- 25 = 22 Hours
     -- 26 = 23 Hours
     -- 27 = Real-time
-    DayLength = 5,
+    DayLength = 6,
     StartYear = 1,
     -- Month in which the game starts. Default = July
     -- 1 = January
@@ -1676,7 +1676,7 @@ SandboxVars = {
         -- Min: 1 Max: 100 Default: 100
         RecoveryPercentage = 100,
         -- Min: 0.00 Max: 1000.00 Default: 1.00
-        TranscribeSpeed = 1.0,
+        TranscribeSpeed = 2.0,
         -- Min: 0.00 Max: 1000.00 Default: 1.00
         ReadTimeSpeed = 1.0,
         RecoverProfessionAndTraitsBonuses = false,
@@ -1703,14 +1703,6 @@ SandboxVars = {
         CraftRecipeNeedLearn = false,
         CraftRecipe = "",
         ModDataTrack = "",
-    },
-    KillCount = {
-        doExport = false,
-        includePostDeathUI = true,
-        -- Min: 0 Max: 10000000 Default: 500
-        MaxUpdateDelay = 500,
-        shareOnServer = true,
-        keepTrackOfDead = true,
     },
     MyOwnWell = {
         -- Min: 0.00 Max: 50.00 Default: 25.00
