@@ -67,6 +67,8 @@
 3379334330;82porsche911
 3409287192;84jeepXJ
 3428008364;86chevyCUCV
+3614034284;85chevyStepVan
+3614034284;85chevyStepVanexpanded
 3663628428;Rotten_91RE
 3670064951;KI5campers
 3520758551;WayMoreCars
@@ -92,6 +94,10 @@
 3392964216;devcattfurrymoodles
 3406392630;SKITTLE_LongTermPreservation
 3421651510;TLOUmusicONguitar42B
+3412944806;GuitarMusicAddon
+3261836947;PianoMusicAddon
+3177585116;ViolinMusicAddon
+3538308427;silenthilllifestyleaddon
 3422220305;P4PickingMeister
 3430224478;HydeCoBees
 3431342136;NepRadioPlugs
@@ -170,3 +176,6 @@
 3626823538;OCsPacking
 3410729454;Proper_Infected_Wounds_b42
 3634630898;OCsChallengeTraits
+3420478458;BetterFlashlightsFixed
+3740052292;CompanionDogs
+3762296152;CompanionDogsRottweiler

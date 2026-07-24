@@ -2238,4 +2238,50 @@ SandboxVars = {
         EnableBlackoutExplosions = false,
         EnableBandageAssistance = false,
     },
+    CompanionDogs = {
+        -- Min: 1 Max: 1000 Default: 100
+        TameThreshold = 100,
+        -- Min: 0 Max: 30 Default: 0
+        MaxCompanions = 0,
+        CombatEnabled = true,
+        -- Min: 0.00 Max: 5.00 Default: 1.00
+        DogDamageMultiplier = 1.0,
+        UpkeepEnabled = true,
+        -- Min: 0.00 Max: 5.00 Default: 1.00
+        NeedsRateMultiplier = 1.0,
+        -- Min: 0.00 Max: 100.00 Default: 12.00
+        LoyaltyDecayPerDay = 5.0,
+        SentinelEnabled = true,
+        AutoProtectEnabled = true,
+        BondingEnabled = true,
+        RestedBuffEnabled = true,
+        -- Min: 0.50 Max: 24.00 Default: 2.00
+        RestedBuffHours = 2.0,
+        SkillsEnabled = true,
+        -- Min: 0.10 Max: 10.00 Default: 0.50
+        SkillXPRate = 0.5,
+        HuntEnabled = true,
+        FarmCareEnabled = true,
+        DogNoiseAttractsZombies = true,
+        ShowNameTags = true,
+        ShowMapMarker = false,
+        UrbanSpawnEnabled = true,
+        -- Min: 0.00 Max: 5.00 Default: 1.00
+        DogSpawnMultiplier = 1.0,
+        WildDogsInvincible = false,
+        CountDogKillsForPlayer = true,
+        DespawnOnOwnerOffline = true,
+        AllowDebugSpawn = true,
+        -- Min: 0 Max: 50 Default: 4
+        CargoCapacityBase = 4,
+        -- Min: 0 Max: 50 Default: 8
+        CargoCapacitySpan = 8,
+        BreedingEnabled = true,
+        -- Min: 1 Max: 60 Default: 4
+        GestationDays = 60,
+        -- Min: 1 Max: 365 Default: 90
+        MaturityDays = 90,
+        -- Min: 0.00 Max: 100.00 Default: 5.00
+        BreedChancePerDay = 1.0,
+    },
 }
