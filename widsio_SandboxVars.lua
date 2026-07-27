@@ -2284,4 +2284,45 @@ SandboxVars = {
         -- Min: 0.00 Max: 100.00 Default: 5.00
         BreedChancePerDay = 1.0,
     },
+    BetterSafehouse = {
+        EnableSafehouseViewer = true,
+        EnhancedInvites = true,
+        -- Min: 0 Max: 20 Default: 0
+        MaxJoinedSafehouses = 0,
+        EnableSubOwners = false,
+        -- Min: 0 Max: 20 Default: 0
+        MaxSubOwners = 0,
+        SingleRespawnSafehouseEnabled = true,
+        AdminsFreeAddToSafehouse = true,
+        AdminsCanReleaseAnySafehouse = false,
+        CustomClaimEnabled = false,
+        CustomClaimItemCustomSafehouse = false,
+        CustomClaimFreeAnywhere = 1,
+        -- Min: 3 Max: 200 Default: 31
+        CustomSafehouseSize = 31,
+        CustomClaimRestrictLocations = false,
+        -- Min: 0 Max: 200 Default: 10
+        CustomClaimRestrictDistance = 10,
+        PhunZones2NoSafehouseBlock = true,
+        VanillaSafehouseEnabled = true,
+        -- Min: 0 Max: 10000 Default: 0
+        VanillaSafehouseAreaLimit = 0,
+        -- Min: 0 Max: 10000 Default: 0
+        VanillaSafehouseAreaMinimum = 0,
+        -- Min: 0 Max: 43200 Default: 0
+        VanillaSafehouseClaimCooldownMinutes = 0,
+        ExpansionEnabled = false,
+        ExpansionAllowedRoleNames = "\"Apoiador\"",
+        -- Min: 1 Max: 50 Default: 5
+        ExpansionRoleStepTiles = 5,
+        -- Min: 0 Max: 20000 Default: 600
+        ExpansionRoleMaxExtraTilesFromOriginal = 600,
+        -- Min: 0 Max: 100000 Default: 0
+        ExpansionMaxTotalTiles = 0,
+        ExpansionUserBorderExpansionEnabled = false,
+        -- Min: 0 Max: 200 Default: 1
+        ExpansionUserMaxBorderTilesFromOriginal = 1,
+        ExpansionBlockRoadTiles = false,
+        ExpansionBlockedRoadTileNames = "\"blends_street_01_85",
+    },
 }

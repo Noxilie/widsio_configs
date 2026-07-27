@@ -172,6 +172,9 @@
 3742399637;vehiclepaintsystem
 2757712197;VehicleRepairOverhaul
 2757712197;VehicleSalvageOverhaulB42
+3281755175;VanillaVehiclesAnimated
+3261334016;rope-towing
+3262467691;close-the-trunk
 3745718141;Explosives
 3626823538;OCsPacking
 3410729454;Proper_Infected_Wounds_b42
@@ -179,3 +182,6 @@
 3420478458;BetterFlashlightsFixed
 3740052292;CompanionDogs
 3762296152;CompanionDogsRottweiler
+3770795385;CompanionDogsDoberman
+3634569678;BetterSafehouse
+3249591963;safehousefixbutton
