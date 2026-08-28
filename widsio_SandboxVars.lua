@@ -944,7 +944,7 @@ SandboxVars = {
         RallyGroupSeparation = 15,
         -- How close members of a zombie group stay to the group's "leader". Min: 1 Max: 10 Default: 3
         RallyGroupRadius = 3,
-        -- Min: 10 Max: 500 Default: 300
+        -- Controls the maximum number of zombies tracked before cleanup occurs. 0 means zombies will not be cleaned up. The default value (300) is strongly recommended. Increasing this value or setting to 0 may cause severe performance problems. For troubleshooting and bug-report purposes, please reproduce any issue with the default setting before submitting a report. Min: 0 Max: 5000 Default: 300
         ZombiesCountBeforeDelete = 300,
     },
     MultiplierConfig = {
@@ -1033,6 +1033,10 @@ SandboxVars = {
         -- Min: 0.00 Max: 1000.00 Default: 1.00
         Music = 1.0,
         -- Min: 0.00 Max: 1000.00 Default: 1.00
+        Science = 1.0,
+        -- Min: 0.00 Max: 1000.00 Default: 1.00
+        Insanity = 1.0,
+        -- Min: 0.00 Max: 1000.00 Default: 1.00
         Lockpicking = 1.0,
     },
     RVAddon = {
@@ -1043,6 +1047,13 @@ SandboxVars = {
         Custom3x6Caravan = "",
         Custom3x7Empty = "",
         Custom4x12colossal = "",
+    },
+    TchernoLib = {
+        UselessZombies = false,
+    },
+    ColdWinters = {
+        EnableBlizzards = true,
+        GeneratorFailures = true,
     },
     Tikitown = {
         CollectionPlush = true,
@@ -1077,6 +1088,7 @@ SandboxVars = {
         AllowManlyMANSpawns = true,
     },
     GamestaVehicleZones = {
+        noVanillaVehicles = false,
         -- Min: -1 Max: 100 Default: -1
         spawnRate = -1,
         -- Min: -1 Max: 100 Default: -1
@@ -1099,6 +1111,10 @@ SandboxVars = {
         baseVehicleQuality = -0.1,
         -- Min: -1 Max: 100 Default: -1
         chanceToPartDamage = -1,
+        -- Min: 0 Max: 26512143 Default: 0
+        initMinIndustrialPropaneTankMulti = 0,
+        -- Min: 0 Max: 26512143 Default: 170
+        initMaxIndustrialPropaneTankMulti = 170,
     },
     Text = {
         DividerMusicNew = true,
@@ -1200,36 +1216,60 @@ SandboxVars = {
         DanceAnim = false,
         LSVerbose = false,
     },
-    PZTrueMusicSandbox = {
-        SpawnTrueMoozicVan = true,
-        -- Min: 0 Max: 100 Default: 5
-        SkypeRingChance = 5,
-        -- Min: 1 Max: 365 Default: 47
-        SkypeRingCooldownDays = 47,
-        -- Min: 0 Max: 100000 Default: 100
-        CassetteSpawnRate = 100,
-        -- Min: 0 Max: 100000 Default: 100
-        CassetteCaseSpawnRate = 100,
-        -- Min: 0 Max: 100000 Default: 100
-        VinylSpawn = 60,
-        -- Min: 0 Max: 100000 Default: 100
-        VinylPlayerSpawn = 60,
-        -- Min: 0 Max: 100000 Default: 100
-        WalkmanSpawn = 60,
-        -- Min: 0 Max: 100000 Default: 100
-        BoomboxSpawn = 60,
-        -- Min: 0 Max: 100000 Default: 100
-        ZombieWalkmanSpawnRate = 60,
-        StartWithDevice = 1,
-        -- Min: 600 Max: 172800 Default: 2100
-        MusicPlaybackTimeoutSeconds = 2100,
-        -- Min: 1 Max: 50 Default: 5
-        MusicTimer = 5,
-        EnableDisassembly = true,
-        TMSpeakerDebug = false,
-        AudioSilenceDebug = false,
-        SkypeRingDebugAlwaysFire = false,
-        SkypeRingEnabled = true,
+    NewMusic = {
+        -- Min: 0 Max: 36000 Default: 1500
+        MaxTrackingRange = 1500,
+        -- Min: 4 Max: 50 Default: 10
+        ActiveDeviceLimit = 10,
+        -- Min: 0.02 Max: 1000.00 Default: 24.00
+        BatteryDrainRate = 24.0,
+        -- Min: 9 Max: 500 Default: 35
+        AudioMaxRadius = 35,
+        -- Min: 9 Max: 200 Default: 105
+        ZombieAttractionRadius = 105,
+        Disassembly = true,
+        ZomboidOST = true,
+        ConvertVanillaCDsAndCDPlayers = true,
+        MediaSpawnsWithCases = true,
+        -- Min: 0.00 Max: 4.00 Default: 0.60
+        CassettesSpawnRate = 0.6,
+        -- Min: 0.00 Max: 4.00 Default: 0.30
+        VinylRecordsSpawnRate = 0.6,
+        -- Min: 0.00 Max: 4.00 Default: 0.60
+        CDsSpawnRate = 0.6,
+        -- Min: 0.00 Max: 4.00 Default: 0.60
+        WalkmanSpawnRate = 0.6,
+        -- Min: 0.00 Max: 4.00 Default: 0.60
+        BoomboxSpawnRate = 0.6,
+        -- Min: 0.00 Max: 4.00 Default: 0.60
+        CDPlayerSpawnRate = 0.6,
+        -- Min: 0.00 Max: 4.00 Default: 0.60
+        RecordPlayerSpawnRate = 0.6,
+        -- Min: 0.00 Max: 4.00 Default: 0.60
+        MusicalZombiesSpawnRate = 0.6,
+    },
+    NewMusicRadio = {
+        NMRRadiosAttractZombies = false,
+        NMRTerminalEjectsMusic = true,
+        NMRMusicTerminalFilledAmount = 5,
+        NMRRadioWeatherBroadcast = true,
+        NMRRadioSongAnnouncements = true,
+        NMRRadioHordeNightBroadcast = true,
+        NMRRadioMoods = true,
+        -- Min: 88000 Max: 108000 Default: 93000
+        NMRChannel1 = 93000,
+        -- Min: 88000 Max: 108000 Default: 93200
+        NMRChannel2 = 93200,
+        -- Min: 88000 Max: 108000 Default: 93400
+        NMRChannel3 = 93400,
+        -- Min: 88000 Max: 108000 Default: 93600
+        NMRChannel4 = 93600,
+        -- Min: 88000 Max: 108000 Default: 93800
+        NMRChannel5 = 93800,
+        ActivateNMRMTV = true,
+        -- Min: 200 Max: 220 Default: 212
+        NMRMTV = 212,
+        NMRAllowSkipOnServer = false,
     },
     TrueMusicJukebox = {
         jukeboxesAttractZombies = true,
@@ -1256,62 +1296,42 @@ SandboxVars = {
         -- Min: 0.00 Max: 10.00 Default: 1.00
         starterKitFrequencyMultiplier = 1.0,
         enableJukeboxTherapy = false,
-        -- Min: 0.00 Max: 100.00 Default: 1.00
+        -- Min: 1.00 Max: 100.00 Default: 1.00
         jukeboxTrueDancingMultiplier = 1.0,
-        -- Min: 0.00 Max: 100.00 Default: 0.00
-        jukeboxHappinessRecovery = 0.0,
-        -- Min: 0.00 Max: 100.00 Default: 0.00
-        jukeboxBoredomRecovery = 0.0,
-        -- Min: 0.00 Max: 100.00 Default: 0.00
-        jukeboxStressRecovery = 0.0,
-        -- Min: 0.00 Max: 100.00 Default: 0.00
-        jukeboxAngerRecovery = 0.0,
-        -- Min: 0.00 Max: 100.00 Default: 0.00
-        jukeboxFearRecovery = 0.0,
-        -- Min: 0.00 Max: 100.00 Default: 0.00
-        jukeboxPanicRecovery = 0.0,
-        -- Min: 0.00 Max: 100.00 Default: 0.00
-        jukeboxFatigueRecovery = 0.0,
+        -- Min: 0.00 Max: 100.00 Default: 1.00
+        jukeboxHappinessRecovery = 1.0,
+        -- Min: 0.00 Max: 100.00 Default: 1.00
+        jukeboxBoredomRecovery = 1.0,
+        -- Min: 0.00 Max: 100.00 Default: 1.00
+        jukeboxStressRecovery = 1.0,
+        -- Min: 0.00 Max: 100.00 Default: 1.00
+        jukeboxAngerRecovery = 1.0,
+        -- Min: 0.00 Max: 100.00 Default: 1.00
+        jukeboxFearRecovery = 1.0,
+        -- Min: 0.00 Max: 100.00 Default: 1.00
+        jukeboxPanicRecovery = 1.0,
+        -- Min: 0.00 Max: 100.00 Default: 1.00
+        jukeboxFatigueRecovery = 1.0,
         enableJukeboxNutrition = false,
         enableStaticPlayerHealth = false,
-        -- Min: 0.00 Max: 100.00 Default: 0.00
-        jukeboxHungerRecovery = 0.0,
-        -- Min: 0.00 Max: 100.00 Default: 0.00
-        jukeboxThirstRecovery = 0.0,
-        -- Min: 0.00 Max: 1100.00 Default: 0.00
-        jukeboxCalorieRecovery = 0.0,
-        -- Min: 0.00 Max: 110.00 Default: 0.00
-        jukeboxCarbohydrateRecovery = 0.0,
-        -- Min: 0.00 Max: 110.00 Default: 0.00
-        jukeboxProteinRecovery = 0.0,
-        -- Min: 0.00 Max: 110.00 Default: 0.00
-        jukeboxLipidRecovery = 0.0,
+        -- Min: 0.00 Max: 100.00 Default: 1.00
+        jukeboxHungerRecovery = 1.0,
+        -- Min: 0.00 Max: 100.00 Default: 1.00
+        jukeboxThirstRecovery = 1.0,
+        -- Min: 0.00 Max: 1100.00 Default: 1.00
+        jukeboxCalorieRecovery = 1.0,
+        -- Min: 0.00 Max: 110.00 Default: 1.00
+        jukeboxCarbohydrateRecovery = 1.0,
+        -- Min: 0.00 Max: 110.00 Default: 1.00
+        jukeboxProteinRecovery = 1.0,
+        -- Min: 0.00 Max: 110.00 Default: 1.00
+        jukeboxLipidRecovery = 1.0,
     },
-    TrueMusicRadio = {
-        TMRRadiosAttractZombies = true,
-        TMRTerminalEjectsMusic = true,
-        TMRMusicTerminalFilledAmount = 5,
-        TMRExcludeThemeSongs = true,
-        TMRExcludeTCCacheMPSongs = true,
-        TMRExcludeHolidaySongs = true,
-        TMRRadioWeatherBroadcast = true,
-        TMRRadioSongAnnouncements = true,
-        TMRRadioHordeNightBroadcast = true,
-        TMRRadioMoods = true,
-        -- Min: 88000 Max: 108000 Default: 92000
-        TMRChannel1 = 92000,
-        -- Min: 88000 Max: 108000 Default: 92200
-        TMRChannel2 = 92200,
-        -- Min: 88000 Max: 108000 Default: 92400
-        TMRChannel3 = 92400,
-        -- Min: 88000 Max: 108000 Default: 92600
-        TMRChannel4 = 92600,
-        -- Min: 88000 Max: 108000 Default: 92800
-        TMRChannel5 = 92800,
-        ActivateTMRMTV = true,
-        -- Min: 200 Max: 220 Default: 211
-        TMRMTV = 211,
-        TMRAllowSkipOnServer = false,
+    LayeredPlacement = {
+        LayeredPlace = true,
+        FloatingPlace = true,
+        MeshFloorAim = true,
+        CatwalkReach = true,
     },
     FWOFitness = {
         InitialPerkBonus = true,
@@ -1343,6 +1363,8 @@ SandboxVars = {
     },
     FWOWorkingTreadmill = {
         -- Min: 0.00 Max: 100.00 Default: 1.00
+        FitnessXPMultiply = 1.0,
+        -- Min: 0.00 Max: 100.00 Default: 1.00
         StrengthXPMultiply = 1.0,
         -- Min: 0.00 Max: 100.00 Default: 1.00
         SprintingXPMultiply = 1.0,
@@ -1353,6 +1375,44 @@ SandboxVars = {
         TreadmillDropBags = false,
         BenchpressDropBags = false,
         BenchTreadKeepBagsOn = false,
+    },
+    Roll = {
+        -- Min: 0 Max: 100 Default: 25
+        ExtinguishFireChances = 25,
+    },
+    HydeCoBees = {
+        -- Min: 0.25 Max: 5.00 Default: 1.00
+        HiveProductionSpeedMultiplier = 1.0,
+        -- Min: 1.00 Max: 60.00 Default: 7.00
+        QueenLifespanDays = 7.0,
+        -- Min: 0.25 Max: 4.00 Default: 1.00
+        HoneycombYieldMultiplier = 1.0,
+        -- Min: 0.25 Max: 4.00 Default: 1.00
+        ColonyGrowthMultiplier = 1.0,
+        -- Min: 12.00 Max: 240.00 Default: 72.00
+        RoyalJellyHours = 72.0,
+        -- Min: 12.00 Max: 168.00 Default: 48.00
+        QueenLarvaeRaiseHours = 48.0,
+        -- Min: 0.00 Max: 1.00 Default: 0.30
+        PropolisChance = 0.3,
+        -- Min: -10.00 Max: 15.00 Default: 7.00
+        HibernationTemperatureC = 7.0,
+        -- Min: 0.00 Max: 720.00 Default: 48.00
+        JarSourHours = 48.0,
+        BeeStingsEnabled = true,
+        -- Min: 0.00 Max: 10.00 Default: 1.00
+        QueenForageWeightMultiplier = 1.0,
+        -- Min: 0.25 Max: 20.00 Default: 1.00
+        MeadFermentationSpeedMultiplier = 1.0,
+        MeadSpoilageEnabled = true,
+        -- Min: 0.00 Max: 10.00 Default: 1.00
+        AngryBeesDurationMultiplier = 1.0,
+        -- Min: 0.25 Max: 10.00 Default: 1.00
+        SmokeDurationMultiplier = 1.0,
+        -- Min: 1.00 Max: 72.00 Default: 24.00
+        HiveFeedHoursPerLitre = 24.0,
+        -- Min: 1.00 Max: 3.00 Default: 1.15
+        HiveFeedBoostMultiplier = 1.15,
     },
     UsefulBarrels = {
         DebugMode = false,
@@ -1416,6 +1476,8 @@ SandboxVars = {
         BeltSlots = true,
     },
     ammomakerOptions = {
+        -- Min: 1 Max: 10 Default: 1
+        CraftingSpeed = 1,
         -- Min: 1 Max: 100 Default: 10
         NitreYield = 10,
         -- Min: 1 Max: 5 Default: 1
@@ -1436,7 +1498,10 @@ SandboxVars = {
         DroppedCasingsLifetime = 168,
         -- Min: 10 Max: 100 Default: 10
         ProduceAmmoBulkSize = 10,
+        DropCasingsReload = false,
+        CollectAdditionalSeeds = true,
         AllowConvertRecipes = false,
+        ShowHiddenRecipes = false,
         -- Min: 0.00 Max: 30.00 Default: 10.00
         ChanceArmyStorageAmmunition = 10.0,
         -- Min: 0.00 Max: 30.00 Default: 10.00
@@ -1664,46 +1729,6 @@ SandboxVars = {
         -- Min: 0.00 Max: 100.00 Default: 0.01
         NonMilitary = 0.01,
     },
-    Plumbing = {
-        -- Min: 0.00 Max: 0.10 Default: 0.01
-        PumpFilterUsage = 0.007,
-        -- Min: 0.00 Max: 0.01 Default: 0.00
-        PumpEfficiencyLoss = 0.0012,
-        -- Min: 6 Max: 96 Default: 12
-        PumpMaxWater = 12,
-    },
-    SkillRecoveryJournal = {
-        -- Min: 1 Max: 100 Default: 100
-        RecoveryPercentage = 100,
-        -- Min: 0.00 Max: 1000.00 Default: 1.00
-        TranscribeSpeed = 2.0,
-        -- Min: 0.00 Max: 1000.00 Default: 1.00
-        ReadTimeSpeed = 1.0,
-        RecoverProfessionAndTraitsBonuses = false,
-        TranscribeTVXP = false,
-        -- Min: -1 Max: 100 Default: 0
-        RecoverPassiveSkills = 0,
-        -- Min: -1 Max: 100 Default: -1
-        RecoverPhysicalCategorySkills = -1,
-        -- Min: -1 Max: 100 Default: -1
-        RecoverCombatSkills = -1,
-        -- Min: -1 Max: 100 Default: -1
-        RecoverFirearmSkills = -1,
-        -- Min: -1 Max: 100 Default: -1
-        RecoverCraftingSkills = -1,
-        -- Min: -1 Max: 100 Default: -1
-        RecoverSurvivalistSkills = -1,
-        -- Min: -1 Max: 100 Default: -1
-        RecoverFarmingCategorySkills = -1,
-        -- Min: -1 Max: 100 Default: 0
-        KillsTrack = 0,
-        RecoverRecipes = true,
-        RecoveryJournalUsed = false,
-        SecurityFeatures = 1,
-        CraftRecipeNeedLearn = false,
-        CraftRecipe = "",
-        ModDataTrack = "",
-    },
     MyOwnWell = {
         -- Min: 0.00 Max: 50.00 Default: 25.00
         MinWellWaterPerCycle = 25.0,
@@ -1711,6 +1736,8 @@ SandboxVars = {
         MaxWellWaterPerCycle = 75.0,
         -- Min: 1.00 Max: 10.00 Default: 1.00
         WellWaterPerCycleMultiplier = 1.0,
+        -- Min: 0.00 Max: 1.00 Default: 0.15
+        WellWaterRainFactor = 0.15,
         -- Min: 1 Max: 100 Default: 20
         WellMinBetweenDistanceToFullRefil = 20,
         AllowUndergroundWell = true,
@@ -1724,16 +1751,14 @@ SandboxVars = {
         -- Min: 0.00 Max: 10.00 Default: 0.01
         CharcoalNeededPerLiter = 0.01,
     },
-    GeneratorPoweredBuildings = {
-        HeatingSystemEnabled = false,
-        -- Min: 15 Max: 100 Default: 20
-        HeatRadius = 20,
-        -- Min: 20 Max: 500 Default: 120
-        BaseLoadCapacity = 120,
-        -- Min: 50 Max: 5000 Default: 500
-        MaxConsumersPerBuilding = 500,
-        -- Min: 1 Max: 50 Default: 10
-        MaxGeneratorsPerBuilding = 10,
+    BuildableFireplaces = {
+        SmokeToxicity = 4,
+        ComfortEffect = 2,
+        -- Min: 0 Max: 20 Default: 6
+        ComfortRadius = 6,
+        -- Min: 0 Max: 16 Default: 8
+        ChimneySearchHeight = 8,
+        UseCombinedSprites = true,
     },
     ImmersiveWaterShutoff = {
         WaterRemovalMode = 3,
@@ -1748,7 +1773,30 @@ SandboxVars = {
         MaxPercent = 10,
         -- Min: -1 Max: 2147483647 Default: -1
         TaintedWater = -1,
-        PlumbingTaintedWater = false,
+        -- Min: 1.00 Max: 10.00 Default: 1.00
+        TaintedWaterPoisonMultiplier = 1.0,
+        PlumbingSourceQuality = false,
+        UseCustomRainCollectors = false,
+        -- Min: 0.00 Max: 10000.00 Default: 400.00
+        RainCollectorCapacity = 400.0,
+        -- Min: 0.00 Max: 100.00 Default: 0.40
+        RainCollectorRainFactor = 0.4,
+        -- Min: 0.00 Max: 10000.00 Default: 600.00
+        RainCollectorRoundCapacity = 600.0,
+        -- Min: 0.00 Max: 100.00 Default: 0.25
+        RainCollectorRoundRainFactor = 0.25,
+        -- Min: 0.00 Max: 10000.00 Default: 400.00
+        RainCollectorTarpCapacity = 400.0,
+        -- Min: 0.00 Max: 100.00 Default: 0.40
+        RainCollectorTarpRainFactor = 0.4,
+        -- Min: 0.00 Max: 10000.00 Default: 600.00
+        RainCollectorRoundTarpCapacity = 600.0,
+        -- Min: 0.00 Max: 100.00 Default: 0.25
+        RainCollectorRoundTarpRainFactor = 0.25,
+        -- Min: 0.00 Max: 10000.00 Default: 300.00
+        AmphoraCapacity = 300.0,
+        -- Min: 0.00 Max: 100.00 Default: 0.40
+        AmphoraRainFactor = 0.4,
     },
     ZombieVirusVaccineBETA = {
         DebugMode = false,
@@ -1790,6 +1838,120 @@ SandboxVars = {
         AllowScalpelDegrade = false,
         AllowSawDegrade = true,
         StartingKit = true,
+    },
+    PK42 = {
+        isDebugMode = false,
+        TraitSeparator = false,
+        -- Min: 1 Max: 100 Default: 10
+        TraitCost = 10,
+        AllowSmallBladeXPBoost = true,
+        -- Min: 1 Max: 3 Default: 3
+        SmallBladeXPBoost = 3,
+        AllowSmallBluntXPBoost = true,
+        -- Min: 1 Max: 3 Default: 1
+        SmallBluntXPBoost = 1,
+        AllowSpearXPBoost = false,
+        -- Min: 1 Max: 3 Default: 1
+        SpearXPBoost = 1,
+        AllowAxeXPBoost = true,
+        -- Min: 1 Max: 3 Default: 2
+        AxeXPBoost = 2,
+        AllowBluntXPBoost = true,
+        -- Min: 1 Max: 3 Default: 1
+        BluntXPBoost = 1,
+        AllowLongBladeXPBoost = true,
+        -- Min: 1 Max: 3 Default: 1
+        LongBladeXPBoost = 1,
+        FrenzySeparator = false,
+        AllowFrenzy = true,
+        -- Min: 0 Max: 10 Default: 2
+        AFInsanityThreshold = 2,
+        EnableFrenzySpeedBonus = true,
+        EnableFrenzyDamageBonus = true,
+        -- Min: 0 Max: 100 Default: 50
+        FrenzyCombatSpeedBonus = 50,
+        -- Min: 0 Max: 30 Default: 10
+        FrenzyMoveSpeedBonus = 10,
+        -- Min: 0 Max: 200 Default: 80
+        MaxFrenzyDamageBonus = 80,
+        -- Min: 1 Max: 100 Default: 5
+        FrenzyStreakThreshold = 5,
+        -- Min: 1 Max: 100 Default: 60
+        FrenzyFatigueThreshold = 60,
+        -- Min: 1 Max: 100 Default: 70
+        FrenzyEnduranceThreshold = 70,
+        -- Min: 1 Max: 24 Default: 12
+        FrenzyCooldownHours = 12,
+        -- Min: 1 Max: 12 Default: 1
+        FrenzyMaxTime = 1,
+        -- Min: 1 Max: 720 Default: 15
+        FrenzyStreakChainMaxTime = 15,
+        XPSeparator = false,
+        EnableXPDailyCap = true,
+        -- Min: 50 Max: 1000 Default: 200
+        XPDailyCap = 200,
+        -- Min: 0.00 Max: 100.00 Default: 1.00
+        XPOnKillZombie = 1.0,
+        -- Min: 0.00 Max: 200.00 Default: 2.00
+        XPOnKillZombieOnFrenzy = 2.0,
+        -- Min: 0.00 Max: 1000.00 Default: 200.00
+        XPOnKillPlayer = 200.0,
+        -- Min: 0.00 Max: 1000.00 Default: 50.00
+        BanditsXP = 50.0,
+        -- Min: 0.00 Max: 100.00 Default: 30.00
+        XPOnEatRawZombieMeat = 30.0,
+        -- Min: 0.00 Max: 100.00 Default: 20.00
+        XPOnEatCookedZombieMeat = 20.0,
+        -- Min: 0.00 Max: 100.00 Default: 10.00
+        XPOnEatRecipeZombieMeat = 10.0,
+        -- Min: 0.00 Max: 100.00 Default: 10.00
+        ButcheringXP = 10.0,
+        -- Min: 0.00 Max: 100.00 Default: 10.00
+        InsanityXP = 10.0,
+        CannibalismSeparator = false,
+        EnableButcherHookPatch = true,
+        -- Min: 1 Max: 20 Default: 2
+        MinNbMeatZombie = 2,
+        -- Min: 1 Max: 20 Default: 6
+        MaxNbMeatZombie = 6,
+        -- Min: 1 Max: 20 Default: 3
+        MinNbMeatHuman = 3,
+        -- Min: 1 Max: 20 Default: 8
+        MaxNbMeatHuman = 8,
+        -- Min: 1 Max: 100 Default: 50
+        OnEatCookedPlayerInfectionChance = 50,
+        -- Min: 1 Max: 100 Default: 10
+        OnEatCookedPsychopathInfectionChance = 5,
+        -- Min: 0 Max: 10 Default: 7
+        CannibalUnlockThreshold = 7,
+        -- Min: 1 Max: 1000 Default: 100
+        CannibalAmountThreshold = 100,
+        UnlockSeparator = false,
+        -- Min: 0 Max: 10 Default: 3
+        ButcherCorpseUnlockLevel = 0,
+        -- Min: 0 Max: 10 Default: 4
+        SkinCorpseUnlockLevel = 4,
+        -- Min: 0 Max: 10 Default: 4
+        CollectBonesUnlockLevel = 2,
+        MentalHealthSeparator = false,
+        DisableVisualHal = false,
+        DisableAudioHal = false,
+        DisableSpeechHal = false,
+        SimulateNicotineOnKill = true,
+        -- Min: 1 Max: 168 Default: 12
+        BoredomThresholdHours = 12,
+        -- Min: 1 Max: 80 Default: 10
+        AudioHallucinationStartingChance = 10,
+        -- Min: 1 Max: 65 Default: 20
+        IntrusiveThoughtsStartingChance = 20,
+        -- Min: 1 Max: 75 Default: 10
+        VisualHallucinationStartingChance = 10,
+        -- Min: 1 Max: 100 Default: 10
+        LaughChance = 10,
+        -- Min: 1 Max: 100 Default: 10
+        VehicleJumpscareChance = 10,
+        -- Min: 1 Max: 10 Default: 10
+        HallucinationCeaseLevel = 10,
     },
     HereGoesTheSun = {
         EnableGodRays = true,
@@ -2005,8 +2167,6 @@ SandboxVars = {
         consumptionMultiplier = 100,
         -- Min: 1 Max: 10000 Default: 100
         DIYBatteryMultiplier = 100,
-        -- Min: 0 Max: 100 Default: 25
-        solarPanelWorldSpawns = 25,
         BatteryBankSpawn = 3,
         -- Min: 0.00 Max: 100.00 Default: 1.00
         LRMSolarPanels = 1.0,
@@ -2018,7 +2178,15 @@ SandboxVars = {
         ConnectPanelMin = 30,
         -- Min: 0 Max: 50 Default: 0
         BackupConnectRange = 0,
+        -- Min: 20 Max: 40 Default: 20
+        PanelConnectRange = 20,
+        -- Min: 3 Max: 8 Default: 3
+        PanelConnectFloors = 3,
+        -- Min: 1 Max: 8 Default: 1
+        BackupConnectFloors = 1,
+        SolarCrateSpawn = 3,
         HardenedPanelRecipe = true,
+        AllowVanillaConnect = false,
     },
     PFR = {
         -- Min: -30 Max: 0 Default: -10
@@ -2029,6 +2197,53 @@ SandboxVars = {
         -- Min: 0.00 Max: 3.00 Default: 1.00
         InsulationStrength = 1.0,
         ColdFeelingEnabled = true,
+    },
+    LGExtendedElectricity = {
+        Enabled = true,
+        ExtendByDefault = true,
+        ChargeFuel = true,
+        ShareLoad = true,
+        Breaker = false,
+        -- Min: 10 Max: 10000 Default: 225
+        BreakerWattsPerPoint = 225,
+        FuelLine = true,
+        FuelFromPumps = true,
+        -- Min: 0 Max: 8 Default: 1
+        ExteriorReach = 1,
+        Debug = false,
+    },
+    LGExtendedPlumbing = {
+        Enabled = true,
+        -- Min: 1 Max: 64 Default: 12
+        Reach = 12,
+        FedFixtures = "WaterDispenser",
+        WasherPatch = true,
+        Debug = false,
+    },
+    MowingWithScythe = {
+        -- Min: 0.10 Max: 100.00 Default: 1.00
+        GrassTuftsMultiplierMowing = 1.0,
+        -- Min: 0.10 Max: 100.00 Default: 1.00
+        GrassSeedsMultiplierMowing = 1.0,
+        -- Min: 0.00 Max: 100.00 Default: 1.00
+        XPMultiplierMowing = 1.0,
+        -- Min: 0.10 Max: 100.00 Default: 1.00
+        LeavesMultiplierRaking = 1.0,
+        -- Min: 0.00 Max: 100.00 Default: 1.00
+        XPMultiplierRakingLeaves = 1.0,
+        -- Min: 0.00 Max: 100.00 Default: 1.00
+        XPMultiplierSowingGrass = 1.0,
+    },
+    ForeverHarvestableCrops = {
+        HarvestableLifespan = 2,
+    },
+    Plumbing = {
+        -- Min: 0.00 Max: 0.10 Default: 0.01
+        PumpFilterUsage = 0.007,
+        -- Min: 0.00 Max: 0.01 Default: 0.00
+        PumpEfficiencyLoss = 0.0012,
+        -- Min: 6 Max: 96 Default: 12
+        PumpMaxWater = 12,
     },
     PZCrossbows = {
         -- Min: 0.00 Max: 1000.00 Default: 1.00
@@ -2049,6 +2264,30 @@ SandboxVars = {
         BoltSWBaseBreakChance = 50,
         -- Min: 0 Max: 100 Default: 3
         BoltSWBreakChanceScaling = 3,
+        DebugLogging = false,
+    },
+    SVRPClassicBows = {
+        -- Min: 0 Max: 100 Default: 100
+        RecoverMissedArrowsChance = 100,
+        -- Min: 0.00 Max: 10.00 Default: 1.00
+        AimingXPMultiplier = 1.0,
+        -- Min: 0.10 Max: 10.00 Default: 1.00
+        DamageScale = 1.0,
+        -- Min: 0.00 Max: 100.00 Default: 1.00
+        SpawnRateMultiplier = 1.0,
+        RetroactiveSpawnBows = false,
+        FixedAimingLevel = false,
+        OnlyRecoverFromCorpses = false,
+        DisableDebugLogging = true,
+    },
+    HorseMod = {
+        -- Min: 0.10 Max: 10.00 Default: 1.00
+        WalkSpeed = 1.0,
+        -- Min: 0.10 Max: 10.00 Default: 1.00
+        GallopSpeed = 1.0,
+        -- Min: 0.10 Max: 2.00 Default: 1.00
+        StaminaMultiplier = 1.0,
+        RidingPainGrunt = true,
     },
     AdaptiveTraits = {
         AdrenalineJunkie_CanGain = true,
@@ -2160,9 +2399,43 @@ SandboxVars = {
         -- Min: 5 Max: 300 Default: 15
         QuitDelaySeconds = 15,
     },
+    SkillRecoveryJournal = {
+        -- Min: 1 Max: 100 Default: 100
+        RecoveryPercentage = 100,
+        -- Min: 0.00 Max: 1000.00 Default: 1.00
+        TranscribeSpeed = 1.0,
+        -- Min: 0.00 Max: 1000.00 Default: 1.00
+        ReadTimeSpeed = 1.0,
+        -- Min: 0.00 Max: 1.00 Default: 0.00
+        IlliterateSpeedMultiplier = 0.0,
+        RecoverProfessionAndTraitsBonuses = false,
+        TranscribeTVXP = false,
+        -- Min: -1 Max: 100 Default: 0
+        RecoverPassiveSkills = 0,
+        -- Min: -1 Max: 100 Default: -1
+        RecoverPhysicalCategorySkills = -1,
+        -- Min: -1 Max: 100 Default: -1
+        RecoverCombatSkills = -1,
+        -- Min: -1 Max: 100 Default: -1
+        RecoverFirearmSkills = -1,
+        -- Min: -1 Max: 100 Default: -1
+        RecoverCraftingSkills = -1,
+        -- Min: -1 Max: 100 Default: -1
+        RecoverSurvivalistSkills = -1,
+        -- Min: -1 Max: 100 Default: -1
+        RecoverFarmingCategorySkills = -1,
+        -- Min: -1 Max: 100 Default: 0
+        KillsTrack = -1,
+        RecoverRecipes = true,
+        RecoveryJournalUsed = false,
+        SecurityFeatures = 1,
+        CraftRecipeNeedLearn = false,
+        CraftRecipe = "",
+        ModDataTrack = "",
+    },
     Nihonto = {
         replaceVanillaKatana = true,
-        -- Min: 0.10 Max: 100.00 Default: 10.00
+        -- Min: 0.00 Max: 100.00 Default: 10.00
         WeightMultiplier = 10.0,
         SharpnessMechanic = true,
         -- Min: 10.00 Max: 100.00 Default: 36.00
@@ -2206,37 +2479,69 @@ SandboxVars = {
         AllowedColors = "\"white",
     },
     Explosives = {
-        MinesEnabled = false,
-        -- Min: 0.10 Max: 5.00 Default: 1.00
+        VanillaBallisticsEnabled = false,
+        -- Min: 0.01 Max: 5.00 Default: 1.00
         LootMultiplier = 0.3,
         FireDamageEnabled = true,
         -- Min: 0.50 Max: 5.00 Default: 1.00
         FireDamageMultiplier = 1.0,
+        DelayedFuseEnabled = false,
+        -- Min: 0.50 Max: 10.00 Default: 4.00
+        DelayedFuseSeconds = 3.0,
+        DebugSpawnKeyEnabled = false,
     },
     PIW = {
         enableinfection = true,
-        -- Min: 1 Max: 1000 Default: 10
+        -- Min: 1 Max: 1000 Default: 11
         chanceofinfection = 10,
         -- Min: 0.01 Max: 8.00 Default: 0.75
         infectionstrength = 0.75,
-        -- Min: 1 Max: 1000000 Default: 240
+        -- Min: 1 Max: 10000 Default: 240
         safetime = 240,
         -- Min: 0.00 Max: 1000.00 Default: 0.00
         infectiondamage = 0.0,
         unsafedirtybandages = false,
-        -- Min: 0.00 Max: 1000.00 Default: 1.50
+        -- Min: 0.00 Max: 1000.00 Default: 2.25
         dirtybandagesdamage = 1.5,
         reducedhealingwhilewounded = false,
         -- Min: 0.00 Max: 1.00 Default: 0.50
         reducedhealingwhilewoundedammount = 0.5,
         sicknessenabled = true,
         sicknessdificulty = 2,
-        -- Min: 1 Max: 1000000 Default: 300
+        -- Min: 1 Max: 10000 Default: 270
         sicknesssafetime = 300,
+    },
+    LastBreath = {
+        -- Min: 1 Max: 60 Default: 10
+        TriggerHealth = 10,
+        -- Min: 15 Max: 600 Default: 120
+        BleedoutSeconds = 120,
+        -- Min: 1 Max: 120 Default: 15
+        ReviveSeconds = 15,
+        -- Min: 1 Max: 10 Default: 2
+        MaxAttempts = 2,
+        -- Min: 1 Max: 100 Default: 20
+        ReviveHealth = 20,
+        -- Min: 0 Max: 100 Default: 10
+        ChanceAtLevel1 = 10,
+        -- Min: 0 Max: 100 Default: 75
+        ChanceAtLevel10 = 75,
+        AllowSelfRevive = false,
+        AllowDragging = true,
     },
     StartingInjuriesMod = {
         EnableBlackoutExplosions = false,
         EnableBandageAssistance = false,
+    },
+    BFLightState = {
+        -- Min: 0.00 Max: 300.00 Default: 30.00
+        heartbeatSeconds = 30.0,
+    },
+    PAR = {
+        RequireSlotCost = true,
+        -- Min: 0 Max: 10 Default: 2
+        SlotTailoringLevel = 2,
+        AllowCalibration = true,
     },
     CompanionDogs = {
         -- Min: 1 Max: 1000 Default: 100
@@ -2251,17 +2556,23 @@ SandboxVars = {
         NeedsRateMultiplier = 1.0,
         -- Min: 0.00 Max: 100.00 Default: 12.00
         LoyaltyDecayPerDay = 5.0,
+        ProteinNeedEnabled = true,
+        -- Min: 6 Max: 168 Default: 72
+        ProteinHours = 72,
         SentinelEnabled = true,
         AutoProtectEnabled = true,
         BondingEnabled = true,
         RestedBuffEnabled = true,
         -- Min: 0.50 Max: 24.00 Default: 2.00
         RestedBuffHours = 2.0,
+        BreedMoodlesEnabled = true,
         SkillsEnabled = true,
         -- Min: 0.10 Max: 10.00 Default: 0.50
         SkillXPRate = 0.5,
         HuntEnabled = true,
         FarmCareEnabled = true,
+        TricksEnabled = true,
+        ObedienceFailure = true,
         DogNoiseAttractsZombies = true,
         ShowNameTags = true,
         ShowMapMarker = false,
@@ -2283,6 +2594,11 @@ SandboxVars = {
         MaturityDays = 90,
         -- Min: 0.00 Max: 100.00 Default: 5.00
         BreedChancePerDay = 1.0,
+        TripOverDogs = true,
+    },
+    CompanionCat = {
+        -- Min: 0.00 Max: 5.00 Default: 1.00
+        CatSpawnMultiplier = 1.0,
     },
     BetterSafehouse = {
         EnableSafehouseViewer = true,
@@ -2324,5 +2640,8 @@ SandboxVars = {
         ExpansionUserMaxBorderTilesFromOriginal = 1,
         ExpansionBlockRoadTiles = false,
         ExpansionBlockedRoadTileNames = "\"blends_street_01_85",
+    },
+    FurryMod = {
+        AllowChange = true,
     },
 }
